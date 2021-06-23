@@ -38,8 +38,23 @@ function createTimeOutEvent (emp, dateTime = ''){
     return emp
 }
 
-// let hoursWorkedOnDate = function (emp, wkDate){
-//   emp.timeInEvents.find(e => {
-//     return e.date})
-//   console.log(emp.timeInEvents)
-// }
+function hoursWorkedOnDate (rec, wkDate) {
+   let dtIn, dtOut, recIn, recOut
+   rec.timeInEvents.map(n => {
+     let [date, hour] = n.split(' ')
+     recIn = hour
+     dtIn = date
+       console.log(recIn)
+     })
+    rec.timeOutEvents.map(n => {
+        let [date2, hour2] = n.split(' ')
+       recOut = hour2
+       dtOut = date2
+               console.log(recOut)
+    })
+    if(dtIn && dtOut === wkDate){
+        return (recOut - recIn)/100
+    } else {
+      alert('No dice!')
+    }
+}
